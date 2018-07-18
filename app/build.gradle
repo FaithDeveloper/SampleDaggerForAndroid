@@ -31,10 +31,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //avoiding conflict
+//    androidTestCompile 'com.google.code.findbugs:jsr305:3.0.1'
+
     //dagger2
-    compile 'com.google.dagger:dagger:2.16'
+    implementation 'com.google.dagger:dagger:2.16'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
-    compile 'com.google.dagger:dagger-android:2.16'
-    compile 'com.google.dagger:dagger-android-support:2.16'
+    implementation 'com.google.dagger:dagger-android:2.16'
+    implementation 'com.google.dagger:dagger-android-support:2.16'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.16'
 }

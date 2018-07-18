@@ -19,7 +19,7 @@ import dagger.multibindings.IntoMap;
 abstract class AppModule {
     @Singleton
     @Binds
-    abstract DataSource BindDataSource(DataSourceImpl dataSource);
+    abstract DataSource bindDataSource(DataSourceImpl dataSource);
 
     @Binds
     @IntoMap
