@@ -5,5 +5,6 @@ public interface MainActivityContract {
     }
 
     interface Presenter{
+        String getFragmentName();
     }
 }

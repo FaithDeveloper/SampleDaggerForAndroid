@@ -15,7 +15,7 @@ public class MainPresenterImpl implements MainActivityContract.Presenter {
     }
 
     @Override
-    public void loadCategory(){
-        view.setViewPager(dataSource.getCategory());
+    public String getFragmentName() {
+        return dataSource.getMainFragmentMessage();
     }
 }

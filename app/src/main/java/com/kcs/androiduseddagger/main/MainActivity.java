@@ -38,6 +38,6 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
 
     private void showFragment(){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment, MainFragment.newInstance("")).setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
+        ft.replace(R.id.fragment, MainFragment.newInstance(presenter.getFragmentName())).setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
     }
 }
