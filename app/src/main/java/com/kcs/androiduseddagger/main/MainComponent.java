@@ -1,7 +1,5 @@
 package com.kcs.androiduseddagger.main;
 
-import com.kcs.androiduseddagger.main.MainActivity;
-import com.kcs.androiduseddagger.main.MainModule;
 import com.kcs.androiduseddagger.scope.ActivityScope;
 
 import dagger.Subcomponent;

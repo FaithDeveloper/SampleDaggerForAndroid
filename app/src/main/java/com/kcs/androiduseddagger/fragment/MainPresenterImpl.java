@@ -4,12 +4,12 @@ import com.kcs.androiduseddagger.data.DataSource;
 
 import javax.inject.Inject;
 
-public class MoviesPresenterImpl implements MoviesFragmentContract.Presenter {
-    MoviesFragmentContract.View view;
+public class MainPresenterImpl implements MainFragmentContract.Presenter {
+    MainFragmentContract.View view;
     DataSource dataSource;
 
     @Inject
-    public MoviesPresenterImpl(MoviesFragmentContract.View view, DataSource dataSource){
+    public MainPresenterImpl(MainFragmentContract.View view, DataSource dataSource){
         this.view = view;
         this.dataSource = dataSource;
     }

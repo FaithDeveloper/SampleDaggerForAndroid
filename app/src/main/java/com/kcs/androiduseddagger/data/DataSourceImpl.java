@@ -9,24 +9,16 @@ import javax.inject.Inject;
  * Created by chihacker on 2017. 8. 15..
  */
 
-public class DataSourceImpl implements DataSource{
+public class DataSourceImpl implements DataSource {
 
-    private static final String[] CATEGORIES = {"SF","DRAMA"};
-    private static final String[] DRAMA = {"Table 19","Fifty Shades Darker","Dunkirk","The Founder"};
-    private static final String[] SF = {"Power Rangers","Wonder Woman","Spider-Man: Homecoming"
-            ,"Transformers: The Last Knight","The Dark Tower"};
+    private static final String MAIN_FRAGMENT_MESSAGE = "Main Fragment Message";
 
     @Inject
-    public DataSourceImpl(){}
-
-    @Override
-    public List<String> getMovies(String category){
-        if(category.equals("SF"))   return Arrays.asList(SF);
-        else return Arrays.asList(DRAMA);
+    public DataSourceImpl() {
     }
 
     @Override
-    public List<String> getCategory(){
-        return Arrays.asList(CATEGORIES);
+    public String getMainFragmentMessage() {
+        return MAIN_FRAGMENT_MESSAGE;
     }
 }

@@ -1,6 +1,6 @@
 package com.kcs.androiduseddagger.fragment;
 
-public interface MoviesFragmentContract {
+public interface MainFragmentContract {
     interface View{
 
     }

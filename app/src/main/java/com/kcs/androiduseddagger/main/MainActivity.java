@@ -3,9 +3,11 @@ package com.kcs.androiduseddagger.main;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.kcs.androiduseddagger.R;
+import com.kcs.androiduseddagger.fragment.MainFragment;
 
 import java.util.List;
 
@@ -17,10 +19,9 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
 public class MainActivity extends AppCompatActivity implements HasSupportFragmentInjector, MainActivityContract.View {
-    MainActivityContract.Presenter presenter;
 
-    @Inject
-    DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
+    @Inject MainActivityContract.Presenter presenter;
+    @Inject DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
 
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {
@@ -32,10 +33,11 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AndroidInjection.inject(this);
+        showFragment();
     }
 
-    @Override
-    public void setViewPager(List<String> categories) {
-
+    private void showFragment(){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment, MainFragment.newInstance("")).setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
     }
 }

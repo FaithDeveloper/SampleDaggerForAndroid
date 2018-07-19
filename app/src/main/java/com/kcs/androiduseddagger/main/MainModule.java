@@ -2,18 +2,18 @@ package com.kcs.androiduseddagger.main;
 
 import android.support.v4.app.Fragment;
 
-import com.kcs.androiduseddagger.fragment.MovieFragmentComponent;
-import com.kcs.androiduseddagger.fragment.MoviesFragment;
+import com.kcs.androiduseddagger.fragment.MainFragmentComponent;
+import com.kcs.androiduseddagger.fragment.MainFragment;
 import com.kcs.androiduseddagger.scope.ActivityScope;
 
 import dagger.Binds;
 import dagger.Module;
 import dagger.android.AndroidInjector;
-import dagger.android.FragmentKey;
+import dagger.android.support.FragmentKey;
 import dagger.multibindings.IntoMap;
 
-@Module(subcomponents = MovieFragmentComponent.class)
-public abstract class MainModule {
+@Module(subcomponents = MainFragmentComponent.class)
+abstract class MainModule {
     @ActivityScope
     @Binds
     abstract MainActivityContract.View bindView(MainActivity activity);
@@ -25,7 +25,7 @@ public abstract class MainModule {
 
     @Binds
     @IntoMap
-    @FragmentKey(MoviesFragment.class)
+    @FragmentKey(MainFragment.class)
     abstract AndroidInjector.Factory<? extends Fragment>
-    bindMoviesFragment(MovieFragmentComponent.Builder builder);
+    bindMoviesFragment(MainFragmentComponent.Builder builder);
 }

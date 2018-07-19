@@ -14,18 +14,13 @@ import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
 
-public class MoviesFragment extends Fragment implements MoviesFragmentContract.View{
-    @Inject MoviesFragmentContract.Presenter presenter;
+public class MainFragment extends Fragment implements MainFragmentContract.View{
 
-    @Override
-    public void onAttach(Context context) {
-        AndroidSupportInjection.inject(this);
-        super.onAttach(context);
-    }
+    @Inject MainFragmentContract.Presenter presenter;
 
-    public static MoviesFragment newInstance(String category){
+    public static MainFragment newInstance(String category){
 
-        MoviesFragment fragment = new MoviesFragment();
+        MainFragment fragment = new MainFragment();
 
         Bundle bundle = new Bundle();
         bundle.putString("category",category);
@@ -33,6 +28,14 @@ public class MoviesFragment extends Fragment implements MoviesFragmentContract.V
 
         return fragment;
     }
+
+    @Override
+    public void onAttach(Context context) {
+        AndroidSupportInjection.inject(this);
+        super.onAttach(context);
+    }
+
+
 
     @Nullable
     @Override

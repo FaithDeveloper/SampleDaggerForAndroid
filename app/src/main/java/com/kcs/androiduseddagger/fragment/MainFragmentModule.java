@@ -6,12 +6,12 @@ import dagger.Binds;
 import dagger.Module;
 
 @Module
-abstract class MovieModule {
+abstract class MainFragmentModule {
     @FragmentScope
     @Binds
-    abstract MoviesFragmentContract.Presenter bindPresenter(MoviesPresenterImpl presenter);
+    abstract MainFragmentContract.Presenter bindPresenter(MainPresenterImpl presenter);
 
     @FragmentScope
     @Binds
-    abstract MoviesFragmentContract.View bindView(MoviesFragment fragment);
+    abstract MainFragmentContract.View bindView(MainFragment fragment);
 }
